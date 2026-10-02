@@ -25,40 +25,26 @@ Decision support only, a human makes the final decision.
 civicroute-AI/
 
 |-- README.md
-
 |
-
+|
+|
 |-- .gitignore
-
-\\--Project
-
-&#x20;  |--  civicroute\_assessment.ipynb
-
-&#x20;  |
-
-&#x20;  +---data
-
-&#x20;  |    |--  civic\_requests\_prepared.csv
-
-&#x20;  |
-
-&#x20;  +---notes
-
-&#x20;  |    |--  civic\_assess\_notes.ipynb
-
-&#x20;  |
-
-&#x20;  \\---outputs
-
-&#x20;       |--  confusion\_matrix.png
-
-&#x20;       |--  training\_curves.png
-
+\--Project
+      |--civicroute_assessment.ipynb
+      \--data
+           |--civic_requests_prepared.csv
+      |
+      \-- notes
+           |-- civic_assess_notes.ipynb
+      |
+      \-- outputs
+           |-- confusion_matrix.png
+           |-- training_curves.png
 ```
 
 
 
-\## How to reproduce
+## How to reproduce
 
 1. Python 3.12:
 "pip install tensorflow, pandas, numpy, scikit-learn, matplotlib, jupyter"
@@ -70,34 +56,34 @@ civicroute-AI/
 
 
 
-\## Workflow summary
+## Workflow summary
 
-| Step | What happens | Key decision |
+-| Step | What happens | Key decision |
 
-|------|------|------|
 
-| Inspect | shape, types, category counts, missing values | balanced classes -> baseline 25% | 
 
-| Select | 9 input fields, target " category\_label" | excluded "request\_id", "night\_report\_flag", "neighbourhood" | 
+- | Inspect | shape, types, category counts, missing values | balanced classes -> baseline 25% | 
 
-| Missing values | 23 of 7800 values (0.29%) | median for numeric fields, mode for "channel" | 
+- | Select | 9 input fields, target " category\_label" | excluded "request\_id", "night\_report\_flag", "neighbourhood" | 
 
-| Encode | hour -> sin/cos (NumPy), urgency -> 0/1/2, channel -> one hot | keep real order, avoid invented order | 
+- | Missing values | 23 of 7800 values (0.29%) | median for numeric fields, mode for "channel" | 
 
-| Split | 70 / 15 / 15, stratified, fixed seed | scaling uses training data only | 
+- | Encode | hour -> sin/cos (NumPy), urgency -> 0/1/2, channel -> one hot | keep real order, avoid invented order | 
 
-| Model | Dense(32) -> Dense(16) -> Dense(4, SoftMax), 1044 parameters | small model for 420 training rows | 
+- | Split | 70 / 15 / 15, stratified, fixed seed | scaling uses training data only | 
 
-| Train | Adam, sparse categorical cross-entropy, early stopping | best epoch 35 | 
+- | Model | Dense(32) -> Dense(16) -> Dense(4, SoftMax), 1044 parameters | small model for 420 training rows | 
+
+- | Train | Adam, sparse categorical cross-entropy, early stopping | best epoch 35 | 
 
 
 
 \## Key results
 
-* \*\*Test accuracy 0.800\*\* vs 25% baseline (4 balanced classes)
-* \*\*Strength:\*\* "illegal\_dumping" recognized reliably (21 of 23)
-* \*\*Weakness:\*\* "pothole" and "broken\_streetlight" often confused (9 of 18 errors)
-* \*\*Risky error:\*\* 4 of 22 water leaks routed to the wrong team
+* Test accuracy 0.800\*\* vs 25% baseline (4 balanced classes)
+* Strength:\*\* "illegal\_dumping" recognized reliably (21 of 23)
+* Weakness:\*\* "pothole" and "broken\_streetlight" often confused (9 of 18 errors)
+* Risky error:\*\* 4 of 22 water leaks routed to the wrong team
 
 
 

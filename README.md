@@ -1,4 +1,4 @@
-\# CivicRoute AI - Request Category Prototype
+## CivicRoute AI - Request Category Prototype
 
 
 
@@ -8,7 +8,7 @@ Author: Thomas Hart Lindland
 
 
 
-\## What this is
+## What this is
 
 A small TensorFlow/Keras prototype that suggest a request category (pothole, water\_leak, broken\_streetlight, illegal\_dumping), so a council staff can route public service requests faster.
 
@@ -16,7 +16,7 @@ Decision support only, a human makes the final decision.
 
 
 
-\## Repository structure
+## Repository structure
 
 
 
@@ -58,7 +58,7 @@ civicroute-AI/
 
 ## Workflow summary
 
--| Step | What happens | Key decision |
+- | Step | What happens | Key decision |
 
 
 
@@ -78,7 +78,7 @@ civicroute-AI/
 
 
 
-\## Key results
+## Key results
 
 * Test accuracy 0.800\*\* vs 25% baseline (4 balanced classes)
 * Strength:\*\* "illegal\_dumping" recognized reliably (21 of 23)
@@ -87,7 +87,7 @@ civicroute-AI/
 
 
 
-\## Limitations
+## Limitations
 
 * Small synthetic dataset; a single 90-row test set, so results are spproximate
 * Fill values for missing data calculated before the split (mild, negligible leakage)

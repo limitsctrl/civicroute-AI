@@ -26,8 +26,6 @@ civicroute-AI/
 
 |-- README.md
 |
-|
-|
 |-- .gitignore
 \--Project
       |--civicroute_assessment.ipynb

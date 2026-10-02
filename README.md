@@ -49,7 +49,7 @@ civicroute-AI/
 1. Python 3.12:
 "pip install tensorflow, pandas, numpy, scikit-learn, matplotlib, jupyter"
 2. Open "Project/civicroute\_assessment.ipynb"
-3. Run \*\*Kernel -> Restart Kernel and Run All Cells\*\*
+3. Run Kernel -> Restart Kernel and Run All Cells
 4. Results are reproducible: "RANDOM\_SEED = 2026" fixes the data split and model initialization
 
 
@@ -80,10 +80,10 @@ civicroute-AI/
 
 ## Key results
 
-* Test accuracy 0.800\*\* vs 25% baseline (4 balanced classes)
-* Strength:\*\* "illegal\_dumping" recognized reliably (21 of 23)
-* Weakness:\*\* "pothole" and "broken\_streetlight" often confused (9 of 18 errors)
-* Risky error:\*\* 4 of 22 water leaks routed to the wrong team
+* Test accuracy 0.800 vs 25% baseline (4 balanced classes)
+* Strength: "illegal\_dumping" recognized reliably (21 of 23)
+* Weakness: "pothole" and "broken\_streetlight" often confused (9 of 18 errors)
+* Risky error: 4 of 22 water leaks routed to the wrong team
 
 
 
